@@ -24,12 +24,7 @@ public class Constant {
             "        }\n" +
             "\n" +
             "        public List(java.util.List<Element> list) {\n" +
-            "            this.list = list;\n" +
-            "        }\n" +
-            "\n" +
-            "        public List(Element[] elements) {\n" +
-            "            this();\n" +
-            "            Collections.addAll(list, elements);\n" +
+            "            this.list = new ArrayList<>(list);\n" +
             "        }\n" +
             "\n" +
             "        public java.util.List<Element> getList() {\n" +
@@ -47,10 +42,6 @@ public class Constant {
             "\n" +
             "        public void add(Element element) {\n" +
             "            list.add(element);\n" +
-            "        }\n" +
-            "\n" +
-            "        public void add(int index, Element element) {\n" +
-            "            list.add(index, element);\n" +
             "        }\n" +
             "\n" +
             "        public Element get(int index) {\n" +

@@ -1,4 +1,4 @@
-package gen;// Generated from D:/yapis/ListCompiler/src/main/resources\Grammar.g4 by ANTLR 4.8
+package gen;// Generated from D:/yapis/ListCompiler/src/main/java\Grammar.g4 by ANTLR 4.8
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -22,11 +22,17 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBlock(GrammarParser.BlockContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GrammarParser#returnBlock}.
+	 * Visit a parse tree produced by {@link GrammarParser#print}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitReturnBlock(GrammarParser.ReturnBlockContext ctx);
+	T visitPrint(GrammarParser.PrintContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#content}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitContent(GrammarParser.ContentContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#type}.
 	 * @param ctx the parse tree
@@ -34,29 +40,11 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitType(GrammarParser.TypeContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GrammarParser#functionSignature}.
+	 * Visit a parse tree produced by {@link GrammarParser#functionDefine}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFunctionSignature(GrammarParser.FunctionSignatureContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#voidFunction}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVoidFunction(GrammarParser.VoidFunctionContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#returnFunction}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitReturnFunction(GrammarParser.ReturnFunctionContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#functionParameters}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFunctionParameters(GrammarParser.FunctionParametersContext ctx);
+	T visitFunctionDefine(GrammarParser.FunctionDefineContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#functionCall}.
 	 * @param ctx the parse tree
@@ -64,47 +52,11 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFunctionCall(GrammarParser.FunctionCallContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GrammarParser#clear}.
+	 * Visit a parse tree produced by {@link GrammarParser#forCycle}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitClear(GrammarParser.ClearContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#add}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAdd(GrammarParser.AddContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#get}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitGet(GrammarParser.GetContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#remove}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitRemove(GrammarParser.RemoveContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#isEmptys}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitIsEmptys(GrammarParser.IsEmptysContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#contains}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitContains(GrammarParser.ContainsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#print}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPrint(GrammarParser.PrintContext ctx);
+	T visitForCycle(GrammarParser.ForCycleContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#elementDeclaration}.
 	 * @param ctx the parse tree
@@ -118,53 +70,29 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitListDeclaration(GrammarParser.ListDeclarationContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GrammarParser#forCycle}.
+	 * Visit a parse tree produced by {@link GrammarParser#equalNames}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitForCycle(GrammarParser.ForCycleContext ctx);
+	T visitEqualNames(GrammarParser.EqualNamesContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GrammarParser#equalName}.
+	 * Visit a parse tree produced by {@link GrammarParser#contains}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitEqualName(GrammarParser.EqualNameContext ctx);
+	T visitContains(GrammarParser.ContainsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GrammarParser#negationEqualName}.
+	 * Visit a parse tree produced by {@link GrammarParser#is_empty}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitNegationEqualName(GrammarParser.NegationEqualNameContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#negationIsEmpty}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitNegationIsEmpty(GrammarParser.NegationIsEmptyContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#negationContains}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitNegationContains(GrammarParser.NegationContainsContext ctx);
+	T visitIs_empty(GrammarParser.Is_emptyContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#compare}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitCompare(GrammarParser.CompareContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#andCompare}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAndCompare(GrammarParser.AndCompareContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link GrammarParser#orCompare}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitOrCompare(GrammarParser.OrCompareContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link GrammarParser#ifBlock}.
 	 * @param ctx the parse tree
@@ -178,9 +106,27 @@ public interface GrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitElseBlock(GrammarParser.ElseBlockContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link GrammarParser#content}.
+	 * Visit a parse tree produced by {@link GrammarParser#add}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitContent(GrammarParser.ContentContext ctx);
+	T visitAdd(GrammarParser.AddContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#clear}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitClear(GrammarParser.ClearContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#get}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitGet(GrammarParser.GetContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarParser#remove}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRemove(GrammarParser.RemoveContext ctx);
 }

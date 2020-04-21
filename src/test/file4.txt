@@ -1,0 +1,15 @@
+{
+Print("program4")
+Element el1 = "element1"
+Element el2 = "element2"
+Element el3 = "element3"
+List l1
+Add(l1,el1)
+Add(l1,el2)
+If(Contains(l1,el1)){
+	If(Contains(l1,el3)){
+	} Else {
+	funck1(l1)
+	}
+}
+}

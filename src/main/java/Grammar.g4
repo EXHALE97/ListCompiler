@@ -1,4 +1,5 @@
 grammar Grammar;
+
 SPACE : [ \t\n\r]+ -> skip;
 STRING : '"'(.)+?'"';
 OPEN_CURLY_BRACKET : '{';
@@ -29,6 +30,7 @@ GT : '>';
 LE : '<=';
 LT : '<';
 PLUS : '+';
+
 program : block functionDefine*;
 block : OPEN_CURLY_BRACKET content* CLOSE_CURLY_BRACKET;
 print : PRINT OPEN_BRACKET (STRING | NAME | size) CLOSE_BRACKET;
@@ -37,7 +39,7 @@ type : LIST | ELEMENT;
 functionDefine : VOID NAME OPEN_BRACKET type NAME (COMMA type NAME)* CLOSE_BRACKET block;
 functionCall : NAME OPEN_BRACKET NAME (COMMA NAME)* CLOSE_BRACKET;
 forCycle : FOR OPEN_BRACKET NAME COMMA NAME CLOSE_BRACKET block;
-elementDeclaration : ELEMENT? NAME ASSIGNMENT (STRING | NAME | get);
+elementDeclaration : (ELEMENT NAME) | (ELEMENT? NAME ASSIGNMENT (STRING | NAME | get));
 listDeclaration : (LIST NAME) | (LIST? NAME ASSIGNMENT NAME);
 equalNames : NAME EQUAL NAME;
 contains : CONTAINS OPEN_BRACKET NAME COMMA NAME CLOSE_BRACKET;

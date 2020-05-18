@@ -1,3 +1,3 @@
-java -jar Compiler.jar file1.txt
+java -jar Compiler.jar file.txt
 javac Program.java
 java Program

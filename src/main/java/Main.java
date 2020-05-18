@@ -1,5 +1,4 @@
-import gen.GrammarLexer;
-import gen.GrammarParser;
+import gen.*;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.ParseTree;
 

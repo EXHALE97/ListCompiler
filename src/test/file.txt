@@ -1,0 +1,6 @@
+Print("program1")
+Element el1 = "element1"
+List s
+Add(s,el1)
+For(s,l)
+    Print(l)

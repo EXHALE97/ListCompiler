@@ -1,5 +1,4 @@
-import gen.GrammarBaseVisitor;
-import gen.GrammarParser;
+import gen.*;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -12,14 +11,18 @@ public class CompilerVisitor extends GrammarBaseVisitor<String> {
 
     @Override
     public String visitProgram(GrammarParser.ProgramContext ctx) {
+        Memory.getInstance().incrementStack();
         String buffer = Constant.PROGRAM;
 
-        String buffer1 = "";
+        String buffer1 = "{";
         for (GrammarParser.FunctionDefineContext context : ctx.functionDefine()) {
             buffer1 += visitFunctionDefine(context);
         }
 
-        buffer += visitBlock(ctx.block());
+        for (GrammarParser.ContentContext context : ctx.content()) {
+            buffer1 += visitContent(context);
+        }
+
         buffer += buffer1;
         buffer += "}";
 
@@ -31,7 +34,7 @@ public class CompilerVisitor extends GrammarBaseVisitor<String> {
             JOptionPane.showMessageDialog(null, error);
             throw new RuntimeException(error);
         }
-
+        buffer += "}";
         return buffer;
     }
 
